@@ -1,0 +1,53 @@
+body {
+	font-family: 'Permanent Marker', cursive;
+	background: url("../images/background1.jpg");
+	background-size: 100% 800px;
+	width: 80%;
+	margin: auto;
+	color: black;
+}
+
+.heroes {
+	margin: 5px;
+	padding: 5px;
+	outline: none;
+	font-size: 1.5em;
+	background: #C3E54D;
+	border: 3px solid #000;
+	color: #000;
+}
+.heroes:hover {
+	background: #DFFF59;
+}
+
+div .hero {
+	display: inline-block;
+	margin: 5px;
+	font-size: 1.2em;
+}
+
+.input {
+	background: url("../images/word-bubble.png") no-repeat;
+	background-size: 100% 200px;
+	padding: 40px 80px 100px 40px;
+	text-align: center;
+}
+
+#user-input {
+	outline: none;
+	border: none;
+	border-bottom: 1px solid #ccc;
+}
+
+#add-hero {
+	outline: none;
+	border-style: none;
+	background: none;
+}
+#add-hero:hover {
+	background: #ccc;
+}
+
+.gif {
+	border-radius: 5px;
+}
