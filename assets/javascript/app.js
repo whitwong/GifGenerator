@@ -37,7 +37,7 @@ function displayGifs(){
 
 	//Create queryURL using the name of the hero
 	heroName = $(this).attr("data-name");
-	queryURL = "http://api.giphy.com/v1/gifs/search?q=" + heroName + "&api_key=dc6zaTOxFJmzC&limit=10";
+	queryURL = "https://api.giphy.com/v1/gifs/search?q=" + heroName + "&api_key=dc6zaTOxFJmzC&limit=10";
 	
 	//Ajax request
 	$.ajax({
