@@ -30,6 +30,16 @@ $("#add-hero").on("click", function(event){
 	makeButtons();
 });
 
+/**Key-press event for adding new buttons from user input**/
+$("#user-input").keypress(function(e){
+	if (e.keyCode === 13 && $("#user-input").val() !== ""){
+		newTopic = $("#user-input").val();
+		$("#user-input").val("");
+		topics.push(newTopic);
+		makeButtons();
+	}
+})
+
 /**Function for displaying gifs -- ajax request**/
 function displayGifs(){
 	//Clear #gifs area when new hero button is selected
@@ -55,7 +65,6 @@ function displayGifs(){
 
 			//Store and append rating information
 			rating = $("<div>Rating: " + results[j].rating + "</div>");
-			//$("#gifs").append(rating);
 
 			//Store and append gifs. Give attributes to gifs for toggling state later
 			gifShow = $("<img data-state='still' src='" + results[j].images.fixed_height_still.url + "'>");
@@ -63,7 +72,7 @@ function displayGifs(){
 			gifShow.attr("data-animate", results[j].images.fixed_height.url);
 			gifShow.addClass("gif");
 
-			//$("#gifs").append(gifShow);
+			//Append gifs and their ratings to heroDiv
 			heroDiv.append(rating);
 			heroDiv.append(gifShow);
 		};
