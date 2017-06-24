@@ -21,18 +21,22 @@ function makeButtons() {
 /**On-click event for adding new buttons**/
 $("#add-hero").on("click", function(event){
 	event.preventDefault();
-
-	//Take in user input and push to topics array
-	//Also clear user input after value is stored
-	newTopic = $("#user-input").val();
-	$("#user-input").val("");
-	topics.push(newTopic);
-	makeButtons();
+	//Prevent blank user input from creating a new button
+	if ($("#user-input").val() !== ""){
+		//Take in user input and push to topics array
+		//Also clear user input after value is stored
+		newTopic = $("#user-input").val();
+		$("#user-input").val("");
+		topics.push(newTopic);
+		makeButtons();
+	}
 });
 
 /**Key-press event for adding new buttons from user input**/
 $("#user-input").keypress(function(e){
 	if (e.keyCode === 13 && $("#user-input").val() !== ""){
+		//Take in user input and push to topics array
+		//Also clear user input after value is stored
 		newTopic = $("#user-input").val();
 		$("#user-input").val("");
 		topics.push(newTopic);
